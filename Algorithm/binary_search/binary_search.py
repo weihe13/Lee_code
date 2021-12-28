@@ -17,7 +17,7 @@ class Solution(object):
             if nums[m] == target:
                 return m
             elif nums[m] < target:
-                left += 1
+                left = m + 1
             elif nums[m] > target:
-                right -= 1
+                right = m - 1
         return -1
