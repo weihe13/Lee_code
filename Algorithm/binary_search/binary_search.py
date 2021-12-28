@@ -10,6 +10,7 @@ class Solution(object):
         # 1. [5] 5, 会return -1
         # 2. 取不到list的最后一个数：4+(5-4)//2 == 4
 
+
         left = 0
         right = len(nums) - 1
         while left <= right:
