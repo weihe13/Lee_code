@@ -1,3 +1,7 @@
+# 注意： 用two pointers 时，nums_copy = nums.copy()可能说没有这个attribution，这时可以用nums[:].
+
+
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -15,10 +19,6 @@ class Solution(object):
         #         return [i, hashmap[complement]]
         # 有相同元素时，hashmap匹配了最后一个的index，第二次循环时再看i和hashmap[complement]是否为同一个。
 
-        # for i in range(len(nums)):
-        #     for j in range(i+1,len(nums)):
-        #         if nums[i]+nums[j] == target:
-        #             return [i,j]
 
         numscopy = nums[:]
         nums.sort()
