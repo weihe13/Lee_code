@@ -20,7 +20,7 @@
 # 2. Using two pointers. As long as
 # the height[left] is bigger than height right, the water trapped depends on the right_max. So, we can say that if
 # there is a larger bar at one end (say right), we are assured that the water trapped would be dependant on height of
-# bar in current direction (from left to right). As soon as we find the bar at other end (right) is smaller,
+# bar in current direction (from left to right). As soon as we find the bar at reverse_string end (right) is smaller,
 # we start iterating in opposite direction (from right to left). We must maintain \text{left\_max}left_max and \text{
 # right\_max}right_max during the iteration, but now we can do it in one iteration using 2 pointers,
 # switching between the two.
