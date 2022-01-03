@@ -15,6 +15,7 @@
 #      2. j决定的是每次尝试的str结束的位置，所以j也要在range(len(s))循环，直接指定最末位置，前面所有情况都没有尝试。
 #      3. 矩阵模式下，会超时，考虑改进：因为对于任意一行j，dp 只与前一行有关，与j-2之前的行都无关，所以记录之前的结果无意义，不需要记录矩阵
 #      4. 最好方法：按return的len是odd还是even两种情况讨论，速度快，容易理解。
+#      5. helper函数return时，注意str的切片是左闭右开。
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
@@ -44,7 +45,7 @@ class Solution:
                 i2 += 1
             else:
                 break
-        return s[i + 1:i2]
+        return s[i + 1:i2]  # 注意i2是取不到的
 
 class Solution3: # 会超时
     def longestPalindrome(self, s: str) -> str:
