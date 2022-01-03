@@ -14,6 +14,38 @@
 # 思路：1. https://zkf85.github.io/2019/03/26/leetcode-005-longest-palindrome
 #      2. j决定的是每次尝试的str结束的位置，所以j也要在range(len(s))循环，直接指定最末位置，前面所有情况都没有尝试。
 #      3. 矩阵模式下，会超时，考虑改进：因为对于任意一行j，dp 只与前一行有关，与j-2之前的行都无关，所以记录之前的结果无意义，不需要记录矩阵
+#      4. 最好方法：按return的len是odd还是even两种情况讨论，速度快，容易理解。
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        longest_pal = ''
+        if len(s) == 0:
+            return ''
+        if len(s) == 1:
+            return s
+
+        for i in range(0, len(s)):
+            # odd case
+            longest = self.helper(s, i, i)
+            if len(longest) > len(longest_pal):
+                longest_pal = longest
+
+            # even case
+            longest = self.helper(s, i, i + 1)
+            if len(longest) > len(longest_pal):
+                longest_pal = longest
+
+        return longest_pal
+
+    def helper(self, s, i, i2):
+        # find longest palindrome starting from i and i2
+        while i >= 0 and i2 < len(s):
+            if s[i] == s[i2]:
+                i -= 1
+                i2 += 1
+            else:
+                break
+        return s[i + 1:i2]
 
 class Solution3: # 会超时
     def longestPalindrome(self, s: str) -> str:
