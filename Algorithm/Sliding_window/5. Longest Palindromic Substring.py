@@ -34,7 +34,6 @@ class Solution:
             longest = self.helper(s, i, i + 1)
             if len(longest) > len(longest_pal):
                 longest_pal = longest
-
         return longest_pal
 
     def helper(self, s, i, i2):
@@ -82,3 +81,14 @@ class Solution3_2: # 不再记录整个矩阵，只记录array
                 if dp[i] and j - i + 1 > len(res):
                     res = s[i:j+1]
         return res
+
+        # 硬写的思路
+        # m = ''  # Memory to remember a palindrome
+        # for i in range(len(s)):  # i = start, O = n
+        #     for j in range(len(s), i, -1):  # j = end, O = n^2
+        #         if len(m) >= j-i:  # To reduce time
+        #             break
+        #         elif s[i:j] == s[i:j][::-1]:
+        #             m = s[i:j]
+        #             break
+        # return m
