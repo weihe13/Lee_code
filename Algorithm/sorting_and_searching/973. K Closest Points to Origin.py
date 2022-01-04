@@ -20,7 +20,7 @@
 # 1 <= k <= points.length <= 104
 # -104 < xi, yi < 104
 
-# 思路：heap function，始终剔除最小的，因此取distance的负数
+# 思路：heap function，始终剔除最小的，因此取distance的负数（heap内始终从小到大排序）
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
@@ -28,7 +28,7 @@ class Solution:
         for (x, y) in points:
             dist = -(x*x +y*y)
             if len(heap)==k:
-                heapq.heappushpop(heap, (dist, x, y))
+                heapq.heappushpop(heap, (dist, x, y)) # 剔除最大负值，保留k个elements
             else:
-                heapq.heappush(heap, (dist, x, y))
+                heapq.heappush(heap, (dist, x, y)) # 插入新元素(dist,x,y)，不剔除元素
         return [(x, y) for (dist, x, y) in heap]

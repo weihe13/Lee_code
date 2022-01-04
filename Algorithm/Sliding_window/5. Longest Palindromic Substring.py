@@ -54,7 +54,7 @@ class Solution3: # 会超时
         res = ""
         dp = [[None for i in range(len(s))] for j in range(len(s))]
         for j in range(len(s)):
-            for i in range(j+):
+            for i in range(j+1):
                 if i == j:
                     dp[j][i] = True
                 elif j == i+1:
