@@ -11,6 +11,8 @@
 # 1 <= s.length, t.length <= 5 * 104
 # s and t consist of lowercase English letters.
 # Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
+# 思路：1. 可以用hashmap，可以用any(dict.values())判断是不是所有value都是0，负数也会return True
+
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -24,3 +26,18 @@ class Solution:
         if len(count_t.keys())!=0:
             return False
         return True
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        dict = {}
+        for ele in s:
+            if ele not in dict:
+                dict[ele] = 1
+            else:
+                dict[ele] += 1
+        for ele in t:
+            if ele not in dict:
+                return False
+            else:
+                dict[ele] -= 1
+        return False if any(dict.values()) else True
