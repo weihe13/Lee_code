@@ -30,7 +30,7 @@ class Solution:
 
         # 方法二
         counts = collections.Counter(words)
-        # get a array wchich will have a tuple of word and count
+        # get a array which will have a tuple of word and count
         heap = [(-count, word) for word, count in counts.items()]
         # as default heap structure in python min heap and we want max heap
         # to get top frequent word, we will do a make the counter negative

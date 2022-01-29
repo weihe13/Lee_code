@@ -29,7 +29,7 @@ class Solution1:
         nums.sort()
         for i in range(1, len(nums), 2):
             if nums[i] != nums[i-1]:
-                return nums[i-1] #如果后一个和前一个不一样，return前一个
+                return nums[i-1] # 如果后一个和前一个不一样，return前一个
         return nums[-1] # 如果没有return，说明单独的是最后一个数（没有循环到最后一个数）
 
 class Solution2(object):

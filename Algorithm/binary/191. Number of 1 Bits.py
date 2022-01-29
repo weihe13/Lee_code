@@ -23,7 +23,7 @@
 # The input must be a binary string of length 32.
 # Follow up: If this function is called many times, how would you optimize it?
 
-# 思路：1. in python, bin() can chanage a int to binary. In this question, input n is binary. For example:
+# 思路：1. in python, bin() can change a int to binary. In this question, input n is binary. For example:
 #         print(n): 11
 #         bin(n): '00000000000000000000000000001011' or '0b1011'
 #         bin(n).count('1'): 3  It can return the answer, but may not what the interviewer want.

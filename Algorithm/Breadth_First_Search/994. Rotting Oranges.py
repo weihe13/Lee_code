@@ -60,7 +60,8 @@ class Solution:
                         queue2.append((ni, nj))
                         queue1 -= 1
             else:
-                if len(queue2) > 0:
+                if len(queue2) > 0: # None后面的每一个2都是1变来的，所以只要还有2，就说明刚才那分钟又转化了新的1。没有2了就说明能转化
+                                    # 的转化完了。
                     queue2.append(None)
                     minute += 1
         if queue1:

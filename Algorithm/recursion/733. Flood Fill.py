@@ -27,7 +27,7 @@
 #      3. 这种原位修改的函数，最后不需要return，在recursion时也不能return，直接call。
 #      4. 注意recursion条件判断的写法，自己写时也考虑到了边界问题，但是想的是一起考虑，没有想到分成四种情况。
 #      5. recursion条件判断时，注意len(image)是tr，能取到的最大行位置是tr-1,所以判断条件是r+1<=tr-1。
-#      6. 为什么这里image不用 nonlocal
+#      6. 为什么这里image不用 nonlocal，因为是list
 
 class Solution(object):
     def floodFill(self, image, sr, sc, newColor):

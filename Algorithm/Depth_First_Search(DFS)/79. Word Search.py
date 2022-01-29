@@ -32,7 +32,7 @@ class Solution: # 这个思路和leecode答案完全一样，但是快一些，�
         def dfs(i, j, p):
             if p == len(word): # 如果p==len(word)，说明0到p-1都找到了
                 return True
-            if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]) or board[i][j] != word[p]:
+            if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]) or board[i][j] != word[p]: # 注意是>= 不是>
                 return False
             board[i][j] = "" # 没有return fasle，说明board[i][j] == word[p],标记成""防止重复使用
             if dfs(i + 1, j, p + 1) or dfs(i - 1, j, p + 1) or dfs(i, j + 1, p + 1) or dfs(i, j - 1, p + 1):

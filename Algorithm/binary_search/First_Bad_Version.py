@@ -30,6 +30,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        # 因为是在判断完m位置后，用m+1或m-1赋值，所以不会遗漏
         # 因为每次是用m-1和m+1重新赋值，m一定在left和right之间，不可能等于（m等于left时就是left和right相等）
         # 所以最后一定会形成left==right, 然后：
         # 1. 若该位置为True，则right = m-1<left, 才会停止循环，所以return的是left

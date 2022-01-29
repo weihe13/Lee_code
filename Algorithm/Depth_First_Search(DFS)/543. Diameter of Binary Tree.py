@@ -24,7 +24,7 @@
 #                     if right: recursion_function(right)
 #          这样在每个node，都是先看左边的情况再看右边，一直到最左边的leafnode，才开始return上一级，看上一级的右边是否存在。
 #       2. 在最后return时加1，使得return回的已经是对于上一级node而言最长的path
-#       3. 对于嵌套函数，想用内层函数改变外层函数的变量时，要用nonlocal（python3）
+#       3. 对于嵌套函数，想用内层函数改变外层函数的变量时(除了set list dictionary变量)，要用nonlocal（python3）
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

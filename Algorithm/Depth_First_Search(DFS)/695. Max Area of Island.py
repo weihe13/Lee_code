@@ -19,7 +19,7 @@
 # 1 <= m, n <= 50
 # grid[i][j] is either 0 or 1.
 
-# 思路：1. 这种题recuresion肯定可以做，问题是思路
+# 思路：1. 这种题recursion肯定可以做，问题是思路
 #      2. set, dict, list 三种类型变量在外部函数，被内部函数修改时，改动会保留。可以用此特性标记已经到过的点，防止重复计算。
 #      3. 可以用for 循环+ pop 实现iteration。
 

@@ -21,7 +21,7 @@
 # The answer is guaranteed to fit in a 32-bit integer.
 
 # 思路：因为没有括号，一个stack就够
-
+#      思路是遇到运算符就把当前num加进stack然后清零，用sign记录当前num之前的运算符，并且要考虑到最后一个数一定不是运算符。
 class Solution:
     def calculate(self, s: str) -> int:
         stack = []
