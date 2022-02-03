@@ -29,13 +29,13 @@ class Solution:
         left = right = 0
         seen = {}
         res = 0
-        while right <= l - 1:
+        while right <= l - 1:   # right开始移动后，left不可能大于right，所以不需要判断left是否<=right
             if s[right] not in seen or left > seen[s[right]]:
                 seen[s[right]] = right
                 length = right - left + 1
                 res = max(length, res)
             else:
                 left = seen[s[right]] + 1
-                seen[s[right]] = right
+                seen[s[right]] = right # 要移动left时，也要更新right的位置
             right += 1
         return res

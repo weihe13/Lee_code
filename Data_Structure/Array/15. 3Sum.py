@@ -27,7 +27,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] > 0:
                 break
-            if i == 0 or nums[i] != nums[i - 1]:
+            if i == 0 or nums[i] != nums[i - 1]:  # 因为这里是for循环，i会自动+1，为了没有重复，需要比较i和i-1
                 self.twosum(nums, i, res)
         return res
 
@@ -47,6 +47,8 @@ class Solution:
                 left += 1
                 while left < right and nums[left] == nums[left - 1]:
                     left += 1
+
+
 # Time Complexity: O(n2). twoSumII is O(n), and we call it nn times. Sorting the array takes O(nlogn), so overall
 # complexity is O(nlogn+n2). This is asymptotically equivalent to O(n2).
 # Space Complexity: from O(logn) to O(n), depending on the implementation of the sorting algorithm. For the purpose
@@ -59,10 +61,10 @@ class Solution2:
         for i, val1 in enumerate(nums):
             if val1 not in dup:  # 同样的val1，后循环的不会有更多可能了，只要曾经循环过就跳过，否则3000个0的test过不了
                 dup.add(val1)
-                for j, val2 in enumerate(nums[i+1:]):
+                for j, val2 in enumerate(nums[i + 1:]):
                     complement = -val1 - val2
-                    if complement in seen and seen[complement] == i: #说明i到j之间有complement，组合成功
-                        res.add(tuple(sorted((val1, val2, complement)))) # tuple(sorted())防止add一样组合
-                    seen[val2] = i # 这步最关键，意思是如果complement不在seen里，也把val2在set重的value更新为i，意思是
-                                   # nums[i+1:]里含有val2，如果后面的complement在seen中对应的value是i，就说明组合成功。
+                    if complement in seen and seen[complement] == i:  # 说明i到j之间有complement，组合成功
+                        res.add(tuple(sorted((val1, val2, complement))))  # tuple(sorted())防止add一样组合
+                    seen[val2] = i  # 这步最关键，意思是如果complement不在seen里，也把val2在set中的value更新为i，意思是
+                    # nums[i+1:]里含有val2，如果后面的complement在seen中对应的value是i，就说明组合成功。
         return res

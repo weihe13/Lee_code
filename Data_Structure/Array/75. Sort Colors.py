@@ -26,7 +26,7 @@ class Solution:
         """
         p0 = curr = 0
         p2 = len(nums) - 1
-        while curr <= p2:
+        while curr <= p2:  # 注意p2的位置是没有判断过的，所以要一直判断到p2
             if nums[curr] == 0:
                 nums[p0], nums[curr] = nums[curr], nums[p0]
                 p0 += 1
@@ -35,7 +35,7 @@ class Solution:
                 # 无论哪种情况，curr一定会大于等于p0，从p0位置换到curr的数一定已经检查过了（curr==p0换过来的p0就是0，curr>p0换过来的
                 # p0就是1，无论哪种情况都可以curr+=1，检查下一个）
                 curr += 1
-            elif nums[curr] == 2:
+            elif nums[curr] == 2:    # 要注意必须用elif，为什么？
                 nums[p2], nums[curr] = nums[curr], nums[p2]
                 # curr += 1 注意：互换curr和p2后，curr不能+1，因为换过来的原p2位置的数没有检查过，可能还是2
                 p2 -= 1
