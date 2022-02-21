@@ -65,6 +65,6 @@ class Solution2:
                     complement = -val1 - val2
                     if complement in seen and seen[complement] == i:  # 说明i到j之间有complement，组合成功
                         res.add(tuple(sorted((val1, val2, complement))))  # tuple(sorted())防止add一样组合
-                    seen[val2] = i  # 这步最关键，意思是如果complement不在seen里，也把val2在set中的value更新为i，意思是
+                    seen[val2] = i  # 这步最关键，意思是如果complement不在seen里，就把val2在set中的value更新为i，意思是
                     # nums[i+1:]里含有val2，如果后面的complement在seen中对应的value是i，就说明组合成功。
         return res

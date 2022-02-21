@@ -57,7 +57,7 @@ class Solution:
                 else:
                     level_list.appendleft(curr_node.val) # 偶数行
 
-                if curr_node.left:
+                if curr_node.left:    #注意增加node.left和right的判断也要加在if curr_node里，否则会报错（None.left）
                     node_queue.append(curr_node.left)
                 if curr_node.right:
                     node_queue.append(curr_node.right)
@@ -69,7 +69,7 @@ class Solution:
                                           # len([None])==1,会一直循环下去。
                     node_queue.append(None)
 
-                # prepare for the next level
+                # prepare for the next level, 这两行写在if判断里也行，但是运行速度好像会变慢（不确定），为什么？
                 level_list = deque()
                 is_order_left = not is_order_left
 

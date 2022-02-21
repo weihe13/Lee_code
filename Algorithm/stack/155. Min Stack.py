@@ -65,3 +65,24 @@ class MinStack:
 #
 # Space Complexity : O(n).
 # Worst case is that all the operations are push. In this case, there will be O(2 \cdot n) = O(n)O(2⋅n)=O(n) space used.
+class MinStack2:
+
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+        if not self.min_stack or x <= self.min_stack[-1]:
+            self.min_stack.append(x)
+
+    def pop(self) -> None:
+        if self.min_stack[-1] == self.stack[-1]: #这步要注意，如果top value就是最小值，min_stack也要变
+            self.min_stack.pop()
+        self.stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_stack[-1]
