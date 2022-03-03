@@ -24,28 +24,30 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         res = []
+
         for i in range(len(nums)):
             if nums[i] > 0:
                 break
-            if i == 0 or nums[i] != nums[i - 1]:  # 因为这里是for循环，i会自动+1，为了没有重复，需要比较i和i-1
-                self.twosum(nums, i, res)
+            if i > 0 and nums[i] == nums[i - 1]:  # 用到下标，一定要先判断下标是否越界
+                continue
+            self.two_sum(nums, i, res)
         return res
 
-    def twosum(self, nums, i, res):
+    def two_sum(self, nums, i, res):
         left = i + 1
         right = len(nums) - 1
-
         while left < right:
             sums = nums[i] + nums[left] + nums[right]
-            if sums > 0:
-                right -= 1
-            elif sums < 0:
+            if sums < 0:
                 left += 1
+            elif sums > 0:
+                right -= 1
             else:
                 res.append([nums[i], nums[left], nums[right]])
-                right -= 1
                 left += 1
-                while left < right and nums[left] == nums[left - 1]:
+                right -= 1
+                while left < right and nums[left] == nums[left - 1]:  # 用到下标，一定要先判断下标是否越界，这里外层的判断条件
+                    # 限制不了内层，还要加left < right的判断条件。
                     left += 1
 
 

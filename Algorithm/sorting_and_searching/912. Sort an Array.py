@@ -17,6 +17,34 @@
 #          当i > j 时，i左边的都是小于等于mid的，j右边的都是大于等于mid的，所以i位置一定第一个大于mid的数，j位置一定是第一个小于mid的数，
 #          这时把start位置和j互换，就能使得mid位置左边都小于它，右边都大于它。recursion下去，直到子list只有一个数。
 
+# 记忆：left和right比较有等号，和qivot比较没有等号。
+class Solution_:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        self.quicksort(nums, 0, len(nums) - 1)
+        return nums
+
+    def quicksort(self, nums, start, end):
+        if start >= end:
+            return
+
+        qivot = nums[(start + end) // 2]
+        i = start
+        j = end
+
+        while i <= j: # 这里必须有等号，才能让结束循环的时候i > j, 否则结束的时候可能i==j，导致输入[1,2]，输出[1]和[1,2],无限循环
+            while i <= j and nums[i] < qivot: # 这里第二个判断不能有=
+                i += 1
+            while i <= j and nums[j] > qivot:
+                j -= 1
+            if i <= j:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j -= 1
+
+        self.quicksort(nums, start, j)
+        self.quicksort(nums, i, end)
+
+
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
         self.quicksort(nums, 0, len(nums) - 1)
@@ -35,7 +63,7 @@ class Solution:
         j = end
 
         while i <= j:
-            while i <= j and nums[i] <= nums[start]:
+            while i <= j and nums[i] <= nums[start]: # 等于的情况既放左边也放右边，防止有大量相同的数时不能均分
                 i += 1
             while i <= j and nums[j] >= nums[start]:
                 j -= 1
@@ -43,5 +71,5 @@ class Solution:
                 nums[i], nums[j] = nums[j], nums[i]
 
         nums[start], nums[j] = nums[j], nums[start]
-        self.quicksort(nums, start, j - 1) # j位置（原mid的值）不用包含在内
-        self.quicksort(nums, j + 1, end)   # j位置（原mid的值）不用包含在内
+        self.quicksort(nums, start, j - 1) # j位置（原mid的值）不用包含在内,包含在内会recursion limit使得堆栈溢出。
+        self.quicksort(nums, j + 1, end)   # j位置（原mid的值）不用包含在内，包含在内会recursion limit使得堆栈溢出。
