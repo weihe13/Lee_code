@@ -32,7 +32,7 @@ class Solution_:
         j = end
 
         while i <= j: # 这里必须有等号，才能让结束循环的时候i > j, 否则结束的时候可能i==j，导致输入[1,2]，输出[1]和[1,2],无限循环
-            while i <= j and nums[i] < qivot: # 这里第二个判断不能有=
+            while i <= j and nums[i] < qivot: # 这里第二个判断不能有=, 否则如果很多数相等则无法均分
                 i += 1
             while i <= j and nums[j] > qivot:
                 j -= 1
