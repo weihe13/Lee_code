@@ -34,23 +34,17 @@ class TreeNode:
 
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        diameter = 0
+        max_depth = 0
 
-        def longest_path(node):
-            if not node:
+        def helper(root):
+            nonlocal max_depth
+            if not root:  # 注意不是node时直接return 0，不+1
                 return 0
-            nonlocal diameter
-            # recursively find the longest path in
-            # both left child and right child
-            left_path = longest_path(node.left)
-            right_path = longest_path(node.right)
+            left_path = helper(root.left)  # 只能在return时+1，不能在这里+1，这里+1会使得leaf node的left depth变成1，应该是0
+            right_path = helper(root.right)
+            curr_path = left_path + right_path
+            max_depth = max(max_depth, curr_path)
+            return 1 + max(left_path, right_path)  # 所有node在return时+1，表示返回上一层后的depth
 
-            # update the diameter if left_path plus right_path is larger
-            diameter = max(diameter, left_path + right_path)
-
-            # return the longest one between left_path and right_path;
-            # remember to add 1 for the path connecting the node and its parent
-            return max(left_path, right_path) + 1
-
-        longest_path(root)
-        return diameter
+        helper(root)
+        return max_depth

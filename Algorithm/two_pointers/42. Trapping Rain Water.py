@@ -39,7 +39,8 @@ class Solution(object):
         l = 0
         r = len(height) - 1
         while l < r:
-            if height[l] < height[r]:
+            if height[l] < height[r]:    # 注意外层判断比较的是left和right所在位置的值，使得固定位置是当前最高值，如果比leftmax和
+                # rightmax会滞后（自己猜测，因为leftmax的更新在内层判断，答案不对）
                 if height[l] > max_left:
                     max_left = height[l]
                 else:

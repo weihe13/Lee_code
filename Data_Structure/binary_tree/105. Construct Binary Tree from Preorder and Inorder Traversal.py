@@ -36,16 +36,18 @@
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
 
-        def array_to_tree(left, right):
+        def array_to_tree(left, right):  # left 和 right表示的是inorder的index范围，不是切片
             nonlocal preorder_index
             # if there are no elements to construct the tree
-            if left > right: return None
+            if left > right: return None  # 等于时锁定了node
+                return
 
             # select the preorder_index element as the root and increment it
             root_value = preorder[preorder_index]
             root = TreeNode(root_value)
 
-            preorder_index += 1  # 下一个应该加的数的index
+            preorder_index += 1  # 下一个应该加的数的index。
+            # left > right 时并不会增加preorder_index, 每更新一个node，就要preorder_index加1
             # build left and right subtree
             # excluding inorder_index_map[root_value] element because it's the root
             root.left = array_to_tree(left, inorder_index_map[root_value] - 1)     # 变成了两个子问题
