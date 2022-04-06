@@ -41,8 +41,8 @@ class Solution_:
                 i += 1
                 j -= 1
 
-        self.quicksort(nums, start, j)
-        self.quicksort(nums, i, end)
+        self.quicksort(nums, start, j)  # 这里不是切片，j位置是能取到的，且j位置的数一定小于等于qivot
+        self.quicksort(nums, i, end)  # i位置的数一定大于等于qivot
 
 
 class Solution:

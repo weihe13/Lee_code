@@ -2,36 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0d8c928-5487-49f9-ac40-3ef7bcaa19a6" name="Changes" comment="Success">
-      <change afterPath="$PROJECT_DIR$/Algorithm/Breadth_First_Search/1197. Minimum Knight Moves.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Breadth_First_Search/127. Word Ladder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Breadth_First_Search/133. Clone Graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Breadth_First_Search/Topological order/210. Course Schedule II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Breadth_First_Search/Topological order/269. Alien Dictionary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/10.(Lint) string permutation II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/124. Binary Tree Maximum Path Sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/17. Letter Combinations of a Phone Number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/212. Word Search II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/39. Combination Sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/399. Evaluate Division.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/40. Combination Sum II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/51. N-Queens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/Lint 90 · k Sum II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/Trie/208. Implement Trie (Prefix Tree).py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/sorting_and_searching/Lint 76 · Longest Increasing Subsequence.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/two_pointers/680. Valid Palindrome II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/Dynamic_Programming/Lint 42 · Maximum Subarray II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/ListNode/23. Merge k Sorted Lists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/OO design/1429. First Unique Number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/OO design/146. LRU Cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/OO design/380. Insert Delete GetRandom O(1).py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/OO design/528. Random Pick with Weight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/heapq/264. Ugly Number II.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/heapq/Lint 545 · Top k Largest Numbers II.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/78. Subsets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/90. Subsets II.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/two_pointers/475. Heaters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/two_pointers/76. Minimum Window Substring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/two_pointers/Lint 1375 · Substring With At Least K Distinct Characters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/two_pointers/Lint 406 · Minimum Size Subarray Sum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/543. Diameter of Binary Tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/543. Diameter of Binary Tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/sorting_and_searching/973. K Closest Points to Origin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Structure/heapq/973. K Closest Points to Origin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/two_pointers/42. Trapping Rain Water.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/two_pointers/42. Trapping Rain Water.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structure/binary_tree/105. Construct Binary Tree from Preorder and Inorder Traversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Structure/binary_tree/105. Construct Binary Tree from Preorder and Inorder Traversal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/39. Combination Sum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/39. Combination Sum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm/sorting_and_searching/912. Sort an Array.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/sorting_and_searching/912. Sort an Array.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structure/OO design/146. LRU Cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Structure/OO design/146. LRU Cache.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/刷题记录.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/刷题记录.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -293,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646852359070</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Success">
+      <created>1648707863810</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1648707863810</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -29,43 +29,45 @@
 #       3. 因为一个数可以使用多次，向下层recursion输入参数时不能剔除本层新加的数字，但也不能包含之前已经实验过的数字，否则会重复，所以向
 #       下层输入的参数时candidates[i:]，即包含本层新加的数，但不包含之前已经实验过的数。
 
-class Solution:
+# 方法一，基础dfs，时间复杂度O(N^(T/M)+1),想象成一个树，每一步都有N种选择，M是最小值，树的最大深度是target/minimum
+class Solution1:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
-        candidates.sort()
-        self.dfs(candidates, target, [], res)
+        self.dfs(candidates, [], target, res)
         return res
 
-    def dfs(self, candidates, target, combination, res):
+    def dfs(self, candidates, curr, target, res):
         if target == 0:
-            res.append(combination)
+            res.append(curr)
             return
 
         if target < 0:
             return
 
-        for i in range(len(candidates)):
-            if i > 0 and candidates[i] == candidates[i - 1]:
-                continue
-            self.dfs(candidates[i:], target - candidates[i], combination + [candidates[i]], res)
+        for i in range(len(candidates)):  # 表示寻找以candidate[i]开头的combination
+            self.dfs(candidates[i:], curr + [candidates[i]], target - candidates[i], res)
 
-# 优化：先去重再sort，recursion时如果target已经小于当前num就可以break了。
+
+# 优化：先sort，recursion时如果target已经小于当前num就可以break了。
+#      如果题目中含有重复数字，则需要加上A步骤去重
 class Solution2:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort()
         res = []
-        candidates_sorted = sorted(list(set(candidates)))
-        self.dfs(candidates_sorted, target, [], res)
+        self.dfs(candidates, [], target, res)
         return res
 
-    def dfs(self, candidates, target, combination, res):
+    def dfs(self, candidates, curr, target, res):
         if target == 0:
-            res.append(combination)
+            res.append(curr)
             return
 
         if target < 0:
             return
 
-        for i in range(len(candidates)):
-            if target < candidates[i]:
+        for i in range(len(candidates)):  # 表示寻找以candidate[i]开头的combination
+            if target < candidates[i]:  # 优化：sort后当target小于后就可以break了
                 break
-            self.dfs(candidates[i:], target - candidates[i], combination + [candidates[i]], res)
+            # if i > 0 and candidates[i] == candidates[i - 1]:  A步骤
+            #    continue
+            self.dfs(candidates[i:], curr + [candidates[i]], target - candidates[i], res)

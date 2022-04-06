@@ -77,7 +77,7 @@ class LRUCache:
             return
         pre.next = curr.next
         self.key_to_pre[curr.next.key] = pre
-        curr.next = None
+        curr.next = None  # 先把curr处理干净，再push end
         self.push_end(curr)
 
     def push_end(self, node):
