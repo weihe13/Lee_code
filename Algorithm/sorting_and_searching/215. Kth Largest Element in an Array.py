@@ -14,10 +14,38 @@
 
 # 思路： 1. heap
 #       2. quick sort
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        self.find(nums, k, 0, len(nums) - 1)
+        return nums[k - 1]
+
+    def find(self, nums, k, l, r):
+        if l >= r:
+            return
+
+        qivot = nums[(l + r) // 2]
+        i = l
+        j = r
+        while i <= j:
+            while i <= j and nums[i] > qivot:
+                i += 1
+            while i <= j and nums[j] < qivot:
+                j -= 1
+            if i <= j:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j -= 1
+
+        if j >= k - 1:  # 这里一定要注意是k-1，因为第k大个元素对应的index是k-1，如果j==k-1，那说明第k-1大个数落在左边，需要排左侧，
+            # 否则左侧可以是乱的，排右侧
+            self.find(nums, k, l, j)
+        else:
+            self.find(nums, k, i, r)
+
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        res = self.find_kth_largest(nums, 0, len(nums) - 1, k - 1)
+        res = self.find_kth_largest(nums, 0, len(nums) - 1, k - 1)  # 这里传入k-1，也可以
         return res
 
     def find_kth_largest(self, nums, start, end, k):
