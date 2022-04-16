@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0d8c928-5487-49f9-ac40-3ef7bcaa19a6" name="Changes" comment="Success">
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/250. Count Univalue Subtrees.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/Divide and Conquer/Lint 596 · Minimum Subtree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm/stack/394. Decode String.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_Structure/Dynamic_Programming/prefix_sum/# 134. Gas Station.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/Depth_First_Search(DFS)/DFS+DP/2140. Solving Questions With Brainpower.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/Good_ideas/525. Contiguous Array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/sorting_and_searching/1337. The K Weakest Rows in a Matrix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/str/71. Simplify Path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data_Structure/Dynamic_Programming/926. Flip String to Monotone Increasing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/Hash_map/1010. Pairs of Songs With Total Durations Divisible by 60.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/Hash_map/1010. Pairs of Songs With Total Durations Divisible by 60.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$刷题记录.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/刷题记录.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/刷题记录.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
