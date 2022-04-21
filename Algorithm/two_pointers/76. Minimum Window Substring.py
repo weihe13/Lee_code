@@ -35,6 +35,50 @@
 
 # 思路：1. two pointers，用一个matchedchars记录目前满足要求的字母个数
 
+# 自己写法
+
+import collections
+
+
+class Solution:
+    def minWindow(self, source: str, target: str) -> str:
+        left, right = 0, 0
+        counts = collections.Counter(target)
+        require = len(counts)
+        curr = 0
+        curr_count = collections.defaultdict(int)
+        res, ret = float('inf'), ""
+
+        while left <= len(source) - len(target):
+            while right <= len(source) - 1 and curr < require:
+                curr_count[source[right]] += 1  # 不论souce[right]是否在target中，都加进去，这样移动left时才有的减
+                if curr_count[source[right]] == counts.get(source[right], -1):
+                    curr += 1
+                right += 1
+
+            if curr == require:
+                if right - left + 1 < res:
+                    ret = source[left:right]
+                    res = right - left + 1
+            else:
+                break
+
+            curr_count[source[left]] -= 1
+            if curr_count[source[left]] < counts[source[left]]:
+                curr -= 1
+            left += 1
+            # left一次只移动一位，再写一个while太容易出错了
+            # while left <= len(source)-len(target) and curr == require:
+            #     curr_count[source[left]] -= 1
+            #     if curr_count[source[left]] < counts.get(source[left], -1):
+            #         curr -= 1
+            #     elif right-left < res:
+            #         ret = source[left+1:right]
+            #         res = right - left
+            #     left += 1
+
+        return ret
+
 # 自己写法，稍微有点乱，主要是初始的count+1不在循环里
 class Solution:
     def minWindow(self, source: str, target: str) -> str:
