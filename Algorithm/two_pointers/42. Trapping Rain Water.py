@@ -27,6 +27,14 @@
 
 # 3. 注意这种算法下，固定的那一边一定是当前最高的bar。当左边移动时，说明此时最高的是height[r]，所以water trapped可以直接用
 #    left_max - height[l],因为可以确认left_max没有height[r]高，否则固定的应该是left_max所在位置。
+# 4. Further understanding based on 3: The current maximum height must be the height of index left or index right, so
+#    the outer if condition should compare the height of index left and right to find the current maximum value and fix
+#    left or right. Then move the other side, and use the previous maximum height of that side minus current height to
+#    get the water that can be trapped.
+
+# 5. presum, 用两个list. Need to pay attention that the maximum value of left side and right side should include the
+#    height of the current index. In this way, if the maximum value is the height of current index, the number of water
+#    add to res will be 0. Otherwise, the number of water added to the res could be negative.
 
 class Solution(object):
     def trap(self, height):
@@ -54,3 +62,24 @@ class Solution(object):
                 r -= 1
 
         return area
+
+
+class Solution2:
+    def trap(self, height: List[int]) -> int:
+        left = [0] * len(height)
+        right = [0] * len(height)
+        left_max = right_max = 0
+
+        for i in range(len(height)):
+            left_max = max(left_max, height[i])
+            left[i] = left_max
+
+        for i in range(len(height) - 1, -1, -1):
+            right_max = max(right_max, height[i])
+            right[i] = right_max
+
+        res = 0
+        for i in range(len(height)):
+            h = min(left[i], right[i])
+            res += h - height[i]
+        return res

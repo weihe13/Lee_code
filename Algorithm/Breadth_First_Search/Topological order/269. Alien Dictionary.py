@@ -44,7 +44,7 @@ class Solution:
             for j in range(len(words[i])):
                 if words[i][j] not in graph:
                     graph[words[i][j]] = set()
-        # 初始graph的建立不能用defaultdict，否则key不全（对于没有入度的点，defaultdict里没有对应的key）
+        # 初始graph的建立不能用defaultdict，否则in_degree的key不全（对于没有入度的点，defaultdict里没有对应的key）
         for i in range(len(words) - 1):
             for j in range(min(len(words[i]), len(words[i + 1]))):
                 if words[i][j] != words[i + 1][j]:
@@ -57,7 +57,7 @@ class Solution:
 
     def BFS(self, graph):
         # 对graph中的每一个key，计算入度
-        in_degrees = {node: 0 for node in graph}
+        in_degrees = {node: 0 for node in graph}  # 对所有node建立入度，初始为0
         for letter in graph:
             for j in graph[letter]:
                 in_degrees[j] += 1
